@@ -43,7 +43,7 @@ interface Response {
   };
   period: int;
   reason: enum;
- }
+}
 ```
 
 **[GET]** `/api/v1/admin` - admin branch
