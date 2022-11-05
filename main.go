@@ -1,16 +1,27 @@
 package main
 
 import (
-    "net/http"
-    "github.com/labstack/echo/v5"
+   "fmt"
+	"log"
+   "flag"
+   
+   "library-backend/config"
+   "library-backend/routes"
 )
 
-func main() {
-    router := echo.New()
-    
-    router.GET("/health", func(c echo.Context) error {
-        return c.String(http.StatusOK, "ok")
-    })
+var configPath string
 
-    router.Logger.Fatal(e.Start(":80"))
+func init() {
+	flag.StringVar(&configPath, "config", "config.yml", "path to the config file")
+	flag.Parse()
+}
+
+func main() {
+	cfg, err := config.NewConfig(configPath)
+	if err != nil {
+		log.Fatal(err)
+	}
+   
+   router := routes.NewApi(cfg)
+	router.Logger.Fatal(router.Start(fmt.Sprintf(":%d", cfg.Server.Port)))
 }
