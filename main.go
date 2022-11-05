@@ -1,12 +1,12 @@
 package main
 
 import (
-   "fmt"
+	"flag"
+	"fmt"
 	"log"
-   "flag"
-   
-   "library-backend/config"
-   "library-backend/routes"
+
+	"library-backend/config"
+	"library-backend/routes"
 )
 
 var configPath string
@@ -21,7 +21,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-   
-   router := routes.NewApi(cfg)
+
+	router := routes.NewApi(cfg)
 	router.Logger.Fatal(router.Start(fmt.Sprintf(":%d", cfg.Server.Port)))
 }

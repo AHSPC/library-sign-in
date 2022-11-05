@@ -17,9 +17,9 @@ func NewApi(cfg *config.Config) *echo.Echo {
 		config: cfg,
 		router: echo.New(),
 	}
-   
-   app.router.HideBanner = true
-   
+
+	app.router.HideBanner = true
+
 	app.router.GET("/test", handler.Test)
 
 	return app.router
