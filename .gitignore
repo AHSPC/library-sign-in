@@ -1,3 +1,4 @@
 .nova
 config.yml
 build/*
+*.db
