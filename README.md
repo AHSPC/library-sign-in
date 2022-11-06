@@ -49,12 +49,6 @@ interface Response {
 }
 ```
 
-**[GET]** `/api/v1/admin` - admin branch
-
-```
-Authorization: Bearer <token>
-```
-
 **[GET]** /api/v1/admin/list
 <br /><br /> **JSON:**
 
@@ -64,6 +58,7 @@ Authorization: Bearer <token>
 		"firstname": "john",
 		"lastname": "appleseed"
 	},
+	"date": "2022-11-05T20:05:52-07:00",
 	"period": 1,
 	"reason": "lunch"
 }
@@ -77,6 +72,7 @@ interface Response {
 		firstname: string;
 		lastname: string;
 	};
+	date: string;
 	period: int;
 	reason: string;
 }

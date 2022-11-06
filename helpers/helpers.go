@@ -17,7 +17,7 @@ func InsertStudent(db *sql.DB, name string, firstname string, lastname string, p
 	if err != nil {
 		log.Fatalln(err.Error())
 	}
-	_, err = statement.Exec(id, firstname, lastname, period, reason, time.Now().String())
+	_, err = statement.Exec(id, firstname, lastname, period, reason, time.Now().Format(time.RFC3339))
 
 	if err != nil {
 		log.Fatalln(err.Error())

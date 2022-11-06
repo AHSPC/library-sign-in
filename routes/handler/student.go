@@ -9,17 +9,6 @@ import (
 	"library-backend/helpers"
 )
 
-type student struct {
-	FirstName string `json:"firstname"`
-	LastName  string `json:"lastname"`
-}
-
-type loginBody struct {
-	Student student `json:"student"`
-	Period  int64   `json:"period"`
-	Reason  int64   `json:"reason"`
-}
-
 func Login(dbName string) echo.HandlerFunc {
 	return func(c echo.Context) error {
 		var body loginBody
