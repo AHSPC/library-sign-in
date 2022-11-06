@@ -61,3 +61,8 @@ params `[reason, time, name, period]`
 ```
 Authorization: Bearer <token>
 ```
+
+## License
+
+This project is licensed under the terms of the GPL-3.0 license. See
+[LICENSE](LICENSE.md) for details.
