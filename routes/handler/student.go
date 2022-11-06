@@ -1,8 +1,8 @@
 package handler
 
 import (
-	"encoding/json"
 	"net/http"
+	"fmt"
 
 	"github.com/labstack/echo/v4"
 )
@@ -12,19 +12,27 @@ type student struct {
 	LastName  string `json:"lastname"`
 }
 
-type login struct {
+type loginBody struct {
 	Student student `json:"student"`
 	Period  int64   `json:"period"`
 	Reason  int64   `json:"reason"`
 }
 
 func Login(c echo.Context) error {
-	jsonBody := make(map[string]login)
-	json.NewDecoder(c.Request().Body).Decode(&jsonBody)
+	var body loginBody
 
-	u := &JsonStatus{
+	err := c.Bind(&body)
+	if err != nil {
+		return c.JSON(http.StatusBadRequest, &JsonStatus{
+			Status:  400,
+			Message: "bad request",
+		})
+	}
+   
+   fmt.Println(body)
+
+	return c.JSON(http.StatusOK, &JsonStatus{
 		Status:  200,
 		Message: "succesful login",
-	}
-	return c.JSON(http.StatusOK, u)
+	})
 }
