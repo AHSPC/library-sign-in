@@ -6,6 +6,6 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-func Test(c echo.Context) error {
-	return c.String(http.StatusOK, "test")
+func Health(c echo.Context) error {
+	return c.String(http.StatusOK, "ok")
 }
