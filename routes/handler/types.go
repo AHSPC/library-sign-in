@@ -23,3 +23,12 @@ type JsonList struct {
 	Period  int64   `json:"period"`
 	Reason  string  `json:"reason"`
 }
+
+type AdminList struct {
+	Data []JsonList `json:"data"`
+}
+
+type User struct {
+	Username string `json:"username"`
+	Password string `json:"password"`
+}

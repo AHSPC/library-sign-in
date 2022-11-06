@@ -1,7 +1,13 @@
 server:
   port: # the port the server listens
   domain: # server domain
+  secret: # jwt secret (openssl rand -base64 40 | tr -d '\n')
 
 debug: # whether debug is enabled/disabled
 timezone: # timezone (example: america/los_angeles)
 database: # database name
+
+# admin authorization
+authorization:
+  username:
+  password:

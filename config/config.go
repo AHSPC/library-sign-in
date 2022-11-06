@@ -8,13 +8,20 @@ import (
 type Server struct {
 	Port   int64  `yaml:"port"`
 	Domain string `yaml:"domain"`
+	Secret string `yaml:"secret"`
+}
+
+type AuthConfig struct {
+	Username string `yaml:"username"`
+	Password string `yaml:"password"`
 }
 
 type Config struct {
-	Debug    bool   `yaml:"debug"`
-	Timezone string `yaml:"timezone"`
-	Server   Server `yaml:"server"`
-	Database string `yaml:"database"`
+	Debug    bool       `yaml:"debug"`
+	Timezone string     `yaml:"timezone"`
+	Server   Server     `yaml:"server"`
+	Database string     `yaml:"database"`
+	Auth     AuthConfig `yaml:"authorization"`
 }
 
 func NewConfig(path string) (*Config, error) {
