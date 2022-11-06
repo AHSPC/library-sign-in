@@ -2,7 +2,6 @@ package handler
 
 import (
 	"encoding/json"
-	"fmt"
 	"net/http"
 
 	"github.com/labstack/echo/v4"
@@ -20,10 +19,8 @@ type login struct {
 }
 
 func Login(c echo.Context) error {
-	jsonBody := make(map[string]interface{})
+	jsonBody := make(map[string]login)
 	json.NewDecoder(c.Request().Body).Decode(&jsonBody)
-
-	fmt.Println(jsonBody["test"])
 
 	u := &JsonStatus{
 		Status:  200,
