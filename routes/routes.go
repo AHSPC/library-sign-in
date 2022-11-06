@@ -31,6 +31,7 @@ func NewApi(cfg *config.Config) *echo.Echo {
    // admin := app.router.Group("/api/v1/admin")
 
 	debug.GET("/health", handler.Health)
+   student.POST("/login", handler.Login)
 
 	return app.router
 }

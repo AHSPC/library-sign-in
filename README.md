@@ -22,7 +22,7 @@ Move `config.example.yml` to `config.yml` in the working directory. Edit this fi
 
 **[GET]** `/api/v1/health` - status
 
-**[POST]** `/api/v1/student/auth` - login
+**[POST]** `/api/v1/student/login` - login
 <br /><br /> **JSON:**
 
 ```json
