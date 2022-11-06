@@ -1,4 +1,4 @@
-# library-auth
+# library sign in backend
 
 backend for sign on [frontend](https://github.com/AHSPC/library-sign-in-system)
 
