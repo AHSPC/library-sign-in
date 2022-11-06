@@ -1,0 +1,7 @@
+server:
+  port: # the port the server listens
+  domain: # server domain
+
+debug: # whether debug is enabled/disabled
+timezone: # timezone (example: america/los_angeles)
+database: # database name
