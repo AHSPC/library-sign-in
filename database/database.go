@@ -26,12 +26,12 @@ func CreateDatabase(name string) {
 	fmt.Printf("⇨ database \033[1;36m%s\033[0m connected\n", name)
 }
 
-func Client(name string) (*sql.DB) {
+func Client(name string) *sql.DB {
 	db, err := sql.Open("sqlite3", fmt.Sprintf("%s.db", name))
-   
-   if err != nil {
-      log.Printf("\033[1;31m%s\033[0m\n", err)
-   }
+
+	if err != nil {
+		log.Printf("\033[1;31m%s\033[0m\n", err)
+	}
 
 	return db
 }

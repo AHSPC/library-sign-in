@@ -28,8 +28,8 @@ Move `config.example.yml` to `config.yml` in the working directory. Edit this fi
 ```json
 {
 	"student": {
-		"firstname": "example",
-		"lastname": "student"
+		"firstname": "john",
+		"lastname": "appleseed"
 	},
 	"period": 1,
 	"reason": 1
@@ -55,8 +55,32 @@ interface Response {
 Authorization: Bearer <token>
 ```
 
-**[GET]** /api/v1/admin/view
-params `[reason, time, name, period]`
+**[GET]** /api/v1/admin/list
+<br /><br /> **JSON:**
+
+```json
+{
+	"student": {
+		"firstname": "john",
+		"lastname": "appleseed"
+	},
+	"period": 1,
+	"reason": "lunch"
+}
+```
+
+<br/> **INTERFACE:**
+
+```ts
+interface Response {
+	student: {
+		firstname: string;
+		lastname: string;
+	};
+	period: int;
+	reason: string;
+}
+```
 
 ```
 Authorization: Bearer <token>
