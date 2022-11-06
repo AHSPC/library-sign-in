@@ -1,6 +1,6 @@
-# library sign on backend
+# library sign in backend
 
-backend for sign on [frontend](https://github.com/AHSPC/library-sign-in-system)
+backend for sign in [frontend](https://github.com/AHSPC/library-sign-in-system)
 
 ## Build
 
