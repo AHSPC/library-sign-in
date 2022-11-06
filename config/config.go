@@ -14,6 +14,7 @@ type Config struct {
 	Debug    bool   `yaml:"debug"`
 	Timezone string `yaml:"timezone"`
 	Server   Server `yaml:"server"`
+	Database string `yaml:"database"`
 }
 
 func NewConfig(path string) (*Config, error) {
