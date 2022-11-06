@@ -28,7 +28,7 @@ func NewApi(cfg *config.Config) *echo.Echo {
 
    debug := app.router.Group("/api/v1/debug")
    student := app.router.Group("/api/v1/student")
-   admin := app.router.Group("/api/v1/admin")
+   // admin := app.router.Group("/api/v1/admin")
 
 	debug.GET("/health", handler.Health)
 
