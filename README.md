@@ -49,6 +49,17 @@ interface Response {
 }
 ```
 
+<br/> **REASONS:**
+
+```go
+const (
+   LUNCH = 0
+   SENT_BY_TEACHER = 1
+   FREE_PERIOD = 2
+   BEFORE_OR_AFTER_SCHOOL = 3
+)
+```
+
 **[GET]** /api/v1/admin/list
 <br /><br /> **JSON:**
 
