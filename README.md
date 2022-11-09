@@ -10,4 +10,4 @@ This is the backend for AHSPC's Library Sign-In project, soon to be used at our 
 
 ## License
 
-This project is licensed under the the GPL-3.0 license. See [LICENSE](LICENSE.md) for details.
+This project is licensed under the GPL-3.0 license. See [LICENSE](LICENSE.md) for details.
