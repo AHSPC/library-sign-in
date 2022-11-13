@@ -4,8 +4,8 @@ import tw from 'twin.macro';
 import QRCode from 'react-qr-code';
 import { classNames } from '@/helpers';
 import { Link } from 'react-router-dom';
-import { Listbox } from '@headlessui/react';
-import { PageContentBlock, Transition } from '@/components/elements/generic';
+import { Listbox, Transition } from '@headlessui/react';
+import { PageContentBlock, Theme } from '@/components/elements';
 import { BookOpenIcon, CheckIcon, SelectorIcon } from '@heroicons/react/solid';
 
 const reasons = [
@@ -16,10 +16,7 @@ const reasons = [
 ];
 
 const transitionPropsOverlay = {
-	enter: tw`ease-out duration-300`,
-	enterFrom: tw`opacity-0`,
-	enterTo: tw`opacity-100`,
-	leave: tw`ease-in duration-200`,
+	leave: tw`transition ease-in duration-100`,
 	leaveFrom: tw`opacity-100`,
 	leaveTo: tw`opacity-0`,
 };
@@ -29,6 +26,9 @@ const Slate = (props: { title: any }) => {
 
 	return (
 		<PageContentBlock title={props.title}>
+			<div tw='absolute top-2 right-2'>
+				<Theme />
+			</div>
 			<div tw='max-w-7xl mx-auto sm:px-6 lg:px-8'>
 				<div tw='flex justify-center items-center h-screen'>
 					<div>
@@ -64,13 +64,13 @@ const Slate = (props: { title: any }) => {
 												</span>
 											</Listbox.Button>
 
-											<Transition show={open} as={Fragment}>
+											<Transition show={open} as={Fragment} leave='transition ease-in duration-100' leaveFrom='opacity-100' leaveTo='opacity-0'>
 												<Listbox.Options tw='absolute z-[200] mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm'>
 													{reasons.map((item) => (
 														<Listbox.Option
 															key={item.id}
 															className={({ active }) =>
-																classNames(active ? 'text-white bg-blue-600' : 'text-gray-900', 'cursor-pointer select-none relative py-2 pl-8 pr-4')
+																classNames(active ? 'text-white bg-blue-600' : 'text-gray-900', 'cursor-default select-none relative py-2 pl-3 pr-9')
 															}
 															value={item}>
 															{({ selected, active }) => (
@@ -81,9 +81,9 @@ const Slate = (props: { title: any }) => {
 																		<span
 																			className={classNames(
 																				active ? 'text-white' : 'text-blue-600',
-																				'absolute inset-y-0 left-0 flex items-center pl-1.5'
+																				'absolute inset-y-0 right-0 flex items-center pr-4'
 																			)}>
-																			<CheckIcon tw='h-5 w-5' aria-hidden='true' />
+																			<CheckIcon className='h-5 w-5' aria-hidden='true' />
 																		</span>
 																	) : null}
 																</>

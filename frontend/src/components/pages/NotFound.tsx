@@ -3,7 +3,7 @@ import React from 'react';
 import tw from 'twin.macro';
 import { Link, useLocation } from 'react-router-dom';
 import { NotFound as ImageLink } from '@/assets/images';
-import { PageContentBlock } from '@/components/elements/generic';
+import { PageContentBlock } from '@/components/elements';
 
 const NotFound = (props: { title: string }) => {
 	const location = useLocation();

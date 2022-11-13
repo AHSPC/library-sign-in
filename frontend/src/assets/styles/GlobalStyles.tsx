@@ -4,7 +4,7 @@ import tw, { css, theme, GlobalStyles as BaseStyles } from 'twin.macro';
 
 const customStyles = css({
 	body: {
-		...tw`antialiased bg-gray-50`,
+		...tw`antialiased bg-gray-50 dark:bg-gray-900`,
 	},
 });
 
