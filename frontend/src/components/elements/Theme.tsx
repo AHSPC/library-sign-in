@@ -87,9 +87,9 @@ const Theme = () => {
 	return (
 		<Menu as='div' tw='relative inline-block text-left'>
 			<div>
-				<Menu.Button tw='flex h-8 w-8 items-center justify-center rounded-lg shadow-sm shadow-black/5 ring-1 bg-white ring-black/5 dark:bg-slate-800 dark:ring-inset dark:ring-white/5'>
-					<LightIcon className='w-6 h-6 dark:hidden' />
-					<DarkIcon className='w-6 h-6 hidden dark:block' />
+				<Menu.Button tw='transition flex h-8 w-8 items-center justify-center rounded-lg shadow-sm shadow-black/5 ring-1 bg-white ring-black/5 dark:bg-slate-800 dark:ring-inset dark:ring-white/5'>
+					<LightIcon className='transition w-6 h-6 dark:hidden' />
+					<DarkIcon className='transition w-6 h-6 hidden dark:block' />
 				</Menu.Button>
 			</div>
 
@@ -109,8 +109,8 @@ const Theme = () => {
 									onClick={() => updateStorage('light')}
 									css={localStorage.theme == 'light' && tw`text-sky-600`}
 									className={classNames(
-										active ? 'bg-gray-50 dark:bg-slate-700' : '',
-										'block p-1 text-sm text-gray-800 dark:text-gray-300 my-0.5 cursor-pointer'
+										active ? 'bg-slate-50 dark:bg-slate-700' : '',
+										'block p-1 text-sm text-slate-800 dark:text-slate-300 my-0.5 cursor-pointer'
 									)}>
 									<LightIcon className='ml-1 inline h-6 w-6 mr-2 -mt-0.5' />
 									Light
@@ -123,8 +123,8 @@ const Theme = () => {
 									onClick={() => updateStorage('dark')}
 									css={localStorage.theme == 'dark' && tw`dark:text-sky-500`}
 									className={classNames(
-										active ? 'bg-gray-50 dark:bg-slate-700' : '',
-										'block p-1 text-sm text-gray-800 dark:text-gray-300 my-0.5 cursor-pointer'
+										active ? 'bg-slate-50 dark:bg-slate-700' : '',
+										'block p-1 text-sm text-slate-800 dark:text-slate-300 my-0.5 cursor-pointer'
 									)}>
 									<DarkIcon className='ml-1 inline h-6 w-6 mr-2 -mt-0.5' />
 									Dark
@@ -137,8 +137,8 @@ const Theme = () => {
 									onClick={() => updateStorage('', true)}
 									css={!('theme' in localStorage) && tw`dark:text-sky-500`}
 									className={classNames(
-										active ? 'bg-gray-50 dark:bg-slate-700' : '',
-										'block p-1 text-sm text-gray-800 dark:text-gray-300 my-0.5 cursor-pointer'
+										active ? 'bg-slate-50 dark:bg-slate-700' : '',
+										'block p-1 text-sm text-slate-800 dark:text-slate-300 my-0.5 cursor-pointer'
 									)}>
 									<SystemIcon className='ml-1 inline h-6 w-6 mr-2 -mt-0.5' />
 									System
