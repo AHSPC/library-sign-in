@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 
+import { getToken } from '@/helpers';
 import { GlobalStyles } from '@/assets/styles';
 import { ScrollToTop } from '@/components/elements/generic';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { SlateView, QuickResView, AdminView } from '@/components/pages';
+import { Slate, QuickRes, NotFound } from '@/components/pages';
+import { Login, Dashboard } from '@/components/pages/admin';
 
 const Page = (props: { component: any; title?: any }) => {
 	return <props.component title={props.title} />;
@@ -16,9 +18,9 @@ const App = () => {
 			<ScrollToTop>
 				<Routes>
 					<Route path='*' element={<NotFound title='Whoops, cant find' />} />
-					<Route path='/' element={<Page component={SlateView} />} />
-					<Route path='/qr/:data' element={<Page component={QuickResView} />} />
-					<Route path='/admin' element={<Page component={AdminView} />} />
+					<Route path='/' element={<Page component={Slate} />} />
+					<Route path='/qr/:data' element={<Page component={QuickRes} />} />
+					<Route path='/admin' element={getToken() ? <Page component={Dashboard} /> : <Page component={Login} />} />
 				</Routes>
 			</ScrollToTop>
 		</BrowserRouter>

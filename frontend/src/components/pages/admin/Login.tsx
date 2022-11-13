@@ -4,12 +4,12 @@ import tw from 'twin.macro';
 import { Link } from 'react-router-dom';
 import { PageContentBlock, Transition } from '@/components/elements/generic';
 
-const SlateView = (props: { title: any }) => {
+const Login = (props: { title: any }) => {
 	return (
 		<PageContentBlock title={props.title}>
-			<div>SlateView</div>
+			<div>Login (admin)</div>
 		</PageContentBlock>
 	);
 };
 
-export default SlateView;
+export default Login;

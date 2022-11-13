@@ -14,4 +14,5 @@ const studentSignOn = (firstname: string, lastname: string, period: number, reas
 	return ky.post('/api/v1/student/login', { json: { student: { firstname, lastname }, period, reason } }).json();
 };
 
-export { studentSignOn, StudentResponse };
+export { studentSignOn };
+export type { StudentResponse };

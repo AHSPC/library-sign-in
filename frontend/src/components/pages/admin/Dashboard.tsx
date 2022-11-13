@@ -4,12 +4,12 @@ import tw from 'twin.macro';
 import { Link } from 'react-router-dom';
 import { PageContentBlock, Transition } from '@/components/elements/generic';
 
-const AdminView = (props: { title: any }) => {
+const Dashboard = (props: { title: any }) => {
 	return (
 		<PageContentBlock title={props.title}>
-			<div>AdminView</div>
+			<div>Dashboard (admin)</div>
 		</PageContentBlock>
 	);
 };
 
-export default AdminView;
+export default Dashboard;
