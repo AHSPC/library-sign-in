@@ -10,4 +10,8 @@ const decodeData = (i: string) => {
 
 const getToken = () => localStorage.getItem('library_admin_auth');
 
-export { decodeData, getToken };
+const classNames = (...classes: Array<any>) => {
+	return classes.filter(Boolean).join(' ');
+};
+
+export { decodeData, getToken, classNames };

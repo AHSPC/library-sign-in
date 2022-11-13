@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 
 import { getToken } from '@/helpers';
-import { GlobalStyles } from '@/assets/styles';
 import { ScrollToTop } from '@/components/elements/generic';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Slate, QuickRes, NotFound } from '@/components/pages';
@@ -14,7 +13,6 @@ const Page = (props: { component: any; title?: any }) => {
 const App = () => {
 	return (
 		<BrowserRouter>
-			<GlobalStyles />
 			<ScrollToTop>
 				<Routes>
 					<Route path='*' element={<NotFound title='Whoops, cant find' />} />
