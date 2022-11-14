@@ -4,9 +4,6 @@ This is the backend for AHSPC's Library Sign-In project, soon to be used at our 
 
 ## See also
 
-- [frontend](https://github.com/AHSPC/library-sign-in-system)
-
-- [usage guide](https://github.com/AHSPC/library-sign-in-backend/wiki/Usage)
 
 ## License
 
