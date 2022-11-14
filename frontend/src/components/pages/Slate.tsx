@@ -104,7 +104,7 @@ const gray = (props: { title: any }) => {
 									<button
 										type='button'
 										className='group'
-										tw='transition inline-flex items-center shadow-sm px-4 py-1.5 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:bg-blue-500 hover:border-blue-600 hover:text-blue-50 focus:outline-none dark:bg-slate-600 dark:border-slate-500 dark:text-slate-300 dark:hover:bg-sky-600 dark:hover:border-sky-700'>
+										tw='transition inline-flex items-center shadow-sm px-4 py-1.5 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:bg-blue-500 hover:border-blue-600 hover:text-blue-50 focus:outline-none dark:bg-slate-600 dark:border-slate-500 dark:text-slate-300 dark:hover:bg-sky-600 dark:hover:border-sky-500'>
 										<BookOpenIcon
 											tw='transition -ml-1.5 mr-1 h-5 w-5 text-gray-400 group-hover:text-blue-200 dark:text-slate-400 dark:group-hover:text-sky-300'
 											aria-hidden='true'
