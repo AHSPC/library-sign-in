@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&display=swap'); */
+
+/* .form-wrapper { */
+/* 	position: fixed; */
+/* 	top: 50%; */
+/* 	left: 50%; */
+/* 	transform: translate(-50%, -50%); */
+/* 	display: flex; */
+/* 	flex-direction: column; */
+/* 	justify-content: space-evenly; */
+/* 	border-style: solid; */
+/* 	border-radius: 2em; */
+/* 	padding: 2em; */
+/* 	width: 66%; */
+/* 	aspect-ratio: 1.6; */
+/* 	font-family: Lexend; */
+/* 	font-size: 2em; */
+/* 	backdrop-filter: blur(2px); */
+/* } */
+
+/* .inputs-wrapper { */
+/* 	display: flex; */
+/* 	flex-direction: row; */
+/* 	justify-content: space-evenly; */
+/* 	align-content: stretch; */
+/* 	align-items: center; */
+/* } */
+
+/* .name-input { */
+/* 	height: 4em; */
+/* 	display: flex; */
+/* 	flex-direction: column; */
+/* 	justify-content: space-evenly; */
+
+/* } */
+
+/* .name { */
+/* 	height: 1.25rem; */
+/* 	border-radius: 0.5rem; */
+/* 	border-style: solid; */
+/* 	border-color: black; */
+/* } */
+
+/* .reason-input { */
+/* 	display: flex; */
+/* 	flex-direction: column; */
+/* 	padding: 1em; */
+/* 	border-radius: 2em; */
+/* 	/1* background-color: #2d93dd; *1/ */
+/* } */
+
+/* .submit { */
+/* 	box-sizing: border-box; */
+/* 	border-style: hidden; */
+/* 	height: 4rem; */
+/* 	border-radius: 1rem; */
+/* 	background-color: #2d93dd; */
+/* 	font-family: Lexend; */
+/* 	font-size: 2rem; */
+/* 	/1* box-shadow: 10px 10px 25px, *1/ */ 
+/* 	/1* 5px 5px 15px #2d93dd; *1/ */
+/* } */
+
+/* /1* @media *1/ */ 
+
+
+
+/* @media screen and (max-width: 650px) { */
+/* 	.inputs-wrapper { */
+/* 		flex-direction: column; */
+/* 	} */
+/* } */

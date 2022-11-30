@@ -1,73 +1,48 @@
 {
-	"name": "library-frontend",
-	"license": "GPL-3",
-	"version": "0.0.1",
-	"homepage": ".",
-	"babelMacros": {
-		"twin": {
-			"preset": "emotion"
-		}
+	"name": "library_frontend",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"@js-temporal/polyfill": "^0.3.0",
+		"@testing-library/jest-dom": "^5.16.5",
+		"@testing-library/react": "^13.4.0",
+		"@testing-library/user-event": "^13.5.0",
+		"axios": "^1.1.3",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-icons": "^4.6.0",
+		"react-json-to-table": "^0.1.7",
+		"react-scripts": "5.0.1",
+		"web-vitals": "^2.1.4"
 	},
 	"scripts": {
-		"serve": "NODE_ENV=production vite preview",
-		"build": "yarn lint & NODE_ENV=production tsc && vite build",
-		"build-dev": "NODE_ENV=development vite build --watch",
-		"build-ci": "NODE_ENV=production tsc && vite build",
-		"dev": "NODE_ENV=development vite",
-		"monitor": "NODE_ENV=development vite --clearScreen false",
-		"lint": "eslint src"
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject"
 	},
-	"dependencies": {
-		"@emotion/react": "^11.9.0",
-		"@emotion/styled": "^11.8.1",
-		"@esbuild-plugins/node-globals-polyfill": "^0.1.1",
-		"@headlessui/react": "^1.5.0",
-		"@heroicons/react": "^1.0.6",
-		"@js-temporal/polyfill": "^0.4.3",
-		"@primer/octicons-react": "^17.0.0",
-		"@tailwindcss/forms": "^0.5.2",
-		"@tailwindcss/typography": "^0.5.2",
-		"autoprefixer": "^10.4.4",
-		"axios": "^0.26.1",
-		"base-64": "^1.0.0",
-		"js-cookie": "^3.0.1",
-		"ky": "^0.30.0",
-		"nanoid": "^3.3.3",
-		"postcss": "^8.4.12",
-		"prettier": "^2.6.2",
-		"react": "^18.0.0",
-		"react-dom": "^18.0.0",
-		"react-hook-form": "^7.30.0",
-		"react-qr-code": "^2.0.8",
-		"react-router-dom": "6",
-		"react-typist": "^2.0.5",
-		"tailwindcss": "^3.0.24",
-		"twin.macro": "^3.0.0-rc.1"
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
 	},
 	"devDependencies": {
-		"@babel/plugin-syntax-jsx": "^7.16.7",
-		"@babel/plugin-transform-react-jsx": "^7.17.3",
-		"@emotion/babel-plugin-jsx-pragmatic": "^0.1.5",
-		"@types/base-64": "^1.0.0",
-		"@types/js-cookie": "^3.0.2",
-		"@types/node": "^17.0.25",
-		"@types/react": "^18.0.5",
-		"@types/react-dom": "^18.0.0",
-		"@types/react-html-parser": "^2.0.2",
-		"@types/react-typist": "^2.0.3",
-		"@typescript-eslint/eslint-plugin": "^5.19.0",
-		"@typescript-eslint/parser": "^5.19.0",
-		"@vitejs/plugin-react": "^1.3.0",
-		"babel-plugin-macros": "^3.1.0",
-		"eslint": "^8.13.0",
-		"eslint-plugin-prettier": "^4.0.0",
-		"eslint-plugin-react": "^7.29.4",
-		"sass": "^1.51.0",
-		"typescript": "^4.6.3",
-		"vite": "^2.9.2",
-		"vite-plugin-banner": "^0.2.0",
-		"vite-plugin-checker": "^0.4.6",
-		"vite-plugin-html": "3.1.0",
-		"vite-plugin-remove-console": "^0.0.7"
+		"autoprefixer": "^10.4.13",
+		"postcss": "^8.4.19",
+		"react-router-dom": "^6.4.3",
+		"tailwindcss": "^3.2.4"
 	}
 }

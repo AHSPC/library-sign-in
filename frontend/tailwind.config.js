@@ -1,21 +1,10 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
-const colors = require('tailwindcss/colors');
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-	darkMode: 'class',
-	content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+	content: [
+		"./src/**/*.{js,jsx,ts,tsx}"
+	],
 	theme: {
-		fontFamily: {
-			sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-		},
-		extend: {
-			colors: {
-				zinc: colors.zinc,
-				sky: colors.sky,
-				cyan: colors.cyan,
-				lime: colors.lime,
-			},
-		},
+		extend: {},
 	},
-	plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],
-};
+	plugins: [],
+}
