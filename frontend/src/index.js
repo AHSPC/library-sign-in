@@ -4,9 +4,6 @@ import axios from 'axios'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from './App';
 import Confirm from './confirm';
-// import { JsonToTable } from "react-json-to-table";
-
-// const data = JSON.parse(axios.get('BACKEND_URL/api/v1/admin/list').data)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

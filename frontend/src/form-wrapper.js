@@ -25,7 +25,7 @@ export default function FormWrapper ({ device }) { // Device is a string telling
 	const placeholderName = "John Doe" // called when Form is submitted const confirmScreen = (event) => {
 
 	const confirmScreen = (event) => {
-		axios.post('BACKEND_URL', {
+		axios.post('/api/v1/student/login', {
 			"student": {
 				"firstname": inputs.firstname,
 				"lastname": inputs.lastname,
@@ -36,7 +36,7 @@ export default function FormWrapper ({ device }) { // Device is a string telling
 		})
 		if (device === "QR") {
 			event.preventDefault()
-			// window.open("/confirm", "_self")
+			window.open("/confirm", "_self")
 		} else {
 			window.location.reload()
 		}
@@ -44,6 +44,7 @@ export default function FormWrapper ({ device }) { // Device is a string telling
 
 	// Sets your default name in form from localStorage if you are logging in from qr 
 	useEffect(() => { const storedName = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+		console.log(storedName)
 		if (storedName && device === "QR") { setInputs(storedName) }
 	}, [])
 
@@ -252,6 +253,7 @@ export default function FormWrapper ({ device }) { // Device is a string telling
 	// 	</>
 	// )
 	//
+	console.log(inputs.firstname, inputs.lastname)
 
 
 	return (<>
@@ -269,7 +271,7 @@ export default function FormWrapper ({ device }) { // Device is a string telling
 		type='text'
 		name='fullname'
 		id='fullname'
-		placeholder={ [inputs.firstname, inputs.lastname].join(" ") }
+		defaultValue={ [inputs.firstname, inputs.lastname].join(" ") }
 		autoFocus
 		onChange={ handleChange }
 		className='transition shadow-sm dark:bg-slate-700 p-1.5 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-sky-500 dark:focus:border-sky-500 block w-full pr-12 sm:text-sm border-gray-300 dark:border-slate-600 rounded-md dark:text-slate-200' />

@@ -6,6 +6,6 @@ import (
    "github.com/labstack/echo/v4"
 )
 
-//go:embed all:dist
+//go:embed all:build
 var distDir embed.FS
-var DistDirFS = echo.MustSubFS(distDir, "dist")
+var DistDirFS = echo.MustSubFS(distDir, "build")
