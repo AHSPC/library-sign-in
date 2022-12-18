@@ -253,7 +253,6 @@ export default function FormWrapper ({ device }) { // Device is a string telling
 	// 	</>
 	// )
 	//
-	console.log(inputs.firstname, inputs.lastname)
 
 
 	return (<>
