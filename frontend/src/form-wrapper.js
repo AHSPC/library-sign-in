@@ -20,6 +20,7 @@ export default function FormWrapper ({ device }) { // Device is a string telling
 
 	const [inputs, setInputs] = useState({})
 
+	const  nameInput = useRef(null)
 	const  reasonInput = useRef(null)
 
 	const placeholderName = "John Doe" // called when Form is submitted const confirmScreen = (event) => {
@@ -35,6 +36,8 @@ export default function FormWrapper ({ device }) { // Device is a string telling
 			"period": timeCheck(scheduleCheck()).period,
 		})
 		if (device === "QR") {
+			console.log(inputs)
+			localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(inputs))
 			event.preventDefault()
 			window.open("/confirm", "_self")
 		} else {
@@ -45,25 +48,33 @@ export default function FormWrapper ({ device }) { // Device is a string telling
 	// Sets your default name in form from localStorage if you are logging in from qr 
 	useEffect(() => { const storedName = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
 		console.log(storedName)
-		if (storedName && device === "QR") { setInputs(storedName) }
+		if (storedName && device === "QR") { console.log("AHA"); setInputs(storedName) }
 	}, [])
+
 
 	// Puts name to localStorage
 	useEffect(() => {
 		if (device === "QR") {
-			localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(inputs))
+			if (inputs.firstname) {
+				nameInput.current.value = [inputs.firstname, inputs.lastname].join(" ")
+			}
 		}
 	}, [inputs])
+
+	useEffect(() => {
+		if (nameInput.current.value === " ") {
+			nameInput.current.value = ""
+		}
+	}, [nameInput])
 
 	// Called whenever name in form changes
 	function handleChange(event) {
 		const name = event.target.name
 		const fullName = event.target.value.split(" ")
-		setInputs(values => ({...values, ['firstname']: fullName[0]}))
-		setInputs(values => ({...values, ['lastname']: fullName[1]}))
-		// for (let value in fullName) {
-		// setInputs(values => ({...values, [name]: fullName[value]}))
-		// }
+		if (fullName.length != 1) {
+			setInputs(values => ({...values, ['firstname']: fullName[0]}))
+			setInputs(values => ({...values, ['lastname']: fullName[1]}))
+		}
 	}
 
 
@@ -123,7 +134,7 @@ export default function FormWrapper ({ device }) { // Device is a string telling
 						Temporal.PlainTime.from({ hour: 15, minute: 5 }),   // School End
 						signIn
 					].sort(Temporal.PlainTime.compare)
-				}
+				} 
 				break
 			default:
 				// throw "It's the weekend go home"
@@ -253,7 +264,7 @@ export default function FormWrapper ({ device }) { // Device is a string telling
 	// 	</>
 	// )
 	//
-
+	console.log(inputs)
 
 	return (<>
 		<div className='absolute top-2 right-2'> </div>
@@ -270,9 +281,10 @@ export default function FormWrapper ({ device }) { // Device is a string telling
 		type='text'
 		name='fullname'
 		id='fullname'
+		ref={ nameInput }
 		defaultValue={ [inputs.firstname, inputs.lastname].join(" ") }
-		autoFocus
 		onChange={ handleChange }
+		autoFocus
 		className='transition shadow-sm dark:bg-slate-700 p-1.5 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-sky-500 dark:focus:border-sky-500 block w-full pr-12 sm:text-sm border-gray-300 dark:border-slate-600 rounded-md dark:text-slate-200' />
 		<div className='transition absolute inset-y-0 right-0 flex py-1.5 pr-1.5'>
 		<kbd className='inline-flex items-center px-2 font-sans text-sm font-medium text-gray-400 border border-gray-200 rounded transition dark:text-slate-400 dark:border-slate-600'>
