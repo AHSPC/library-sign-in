@@ -32,7 +32,6 @@ export default function Admin() {
   getData("admin", "admin").then((d) => {
     setData(d);
   });
-
   // let data = { test: "test" };
   // REACT SUCKS
   return <JsonToTable json={data} />;
