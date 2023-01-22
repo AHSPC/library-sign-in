@@ -28,6 +28,7 @@
 	"type": "module",
 	"dependencies": {
 		"@js-temporal/polyfill": "^0.4.3",
+		"@sveltejs/adapter-static": "^1.0.5",
 		"axios": "^1.2.2"
 	}
 }
