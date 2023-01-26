@@ -7,12 +7,12 @@ export default function Admin() {
 	const getData = async (username, password) => await ( await fetch("/api/v1/admin/list", { method: "GET", headers: { Authorization: `Bearer ${ ( await ( await fetch("/api/v1/admin/login", { method: "POST", headers: { "Content-Type": "application/json", }, body: JSON.stringify({ username: username, password: password, }), })).json()).token }`, }, })).json()
 	useEffect(() => {
 		getData('php', 'sucks').then(
-			function (value) { setTableData(value) },
+			function (value) { setTableData(value.data.reverse()) },
 			function (error) { setTableData(error) },
 		)
 	}, [])
 	return (
-		<div className="bg-white" >
+		<div className="bg-white h-5/6 overflow-scroll" >
 		<JsonToTable json={tableData}/>
 		</div>
 	)
