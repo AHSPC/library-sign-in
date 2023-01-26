@@ -35,7 +35,6 @@ export default function FormWrapper ({ device }) { // Device is a string telling
 			"period": timeCheck(scheduleCheck()).period,
 		})
 		if (device === "QR") {
-			console.log(inputs)
 			localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(inputs))
 			event.preventDefault()
 			window.open("/confirm", "_self")
@@ -46,8 +45,7 @@ export default function FormWrapper ({ device }) { // Device is a string telling
 
 	// Sets your default name in form from localStorage if you are logging in from qr 
 	useEffect(() => { const storedName = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
-		console.log(storedName)
-		if (storedName && device === "QR") { console.log("AHA"); setInputs(storedName) }
+		if (storedName && device === "QR") { setInputs(storedName) }
 	}, [])
 
 
@@ -263,7 +261,6 @@ export default function FormWrapper ({ device }) { // Device is a string telling
 	// 	</>
 	// )
 	//
-	console.log(inputs)
 
 	return (<>
 		<div className='absolute top-2 right-2'> </div>

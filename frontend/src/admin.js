@@ -11,5 +11,9 @@ export default function Admin() {
 			function (error) { setTableData(error) },
 		)
 	}, [])
-		return (<JsonToTable json={tableData}/>)
+	return (
+		<div className="bg-white" >
+		<JsonToTable json={tableData}/>
+		</div>
+	)
 	}
