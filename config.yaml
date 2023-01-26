@@ -1,0 +1,12 @@
+server:
+port: 5010
+domain: 
+secret: QgbcqkgRcu0ZAZxMQFRIEtLcRkyD/zUAxzQn+kWAc5f08m26+Extfg==
+
+debug: true
+timezone: America/Los_Angeles
+database: ur_mom
+
+authorization:
+username: php
+password: sucks
