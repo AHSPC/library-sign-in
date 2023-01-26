@@ -1,12 +1,12 @@
 server:
-port: 5010
-domain: 
-secret: QgbcqkgRcu0ZAZxMQFRIEtLcRkyD/zUAxzQn+kWAc5f08m26+Extfg==
+  port: 5010
+  domain: 0.0.0.0
+  secret: vxkZtiGx83a77x3aUZJ8hy3h8YITUBPfHPkqtsR4/U0rUWfUSGe77g==
 
 debug: true
-timezone: America/Los_Angeles
-database: ur_mom
+timezone: america/los_angeles
+database: main
 
 authorization:
-username: php
-password: sucks
+  username: php
+  password: sucks
