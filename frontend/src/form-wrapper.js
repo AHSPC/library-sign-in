@@ -39,7 +39,7 @@ export default function FormWrapper ({ device }) { // Device is a string telling
 			event.preventDefault()
 			window.open("/confirm", "_self")
 		} else {
-			window.location.reload()
+			// window.location.reload()
 		}
 	}
 
@@ -307,6 +307,7 @@ export default function FormWrapper ({ device }) { // Device is a string telling
 		</div>
 		</div>
 		</div>
+		<p className='transition absolute font-semibold text-xs bottom-5 right-5 dark:text-slate-300'>Made by Judah Spiegel, Sajjaad Farzad, Arjun Verma, and Kadin Demarche</p>
 		</div>
 		</div>
 		</div>

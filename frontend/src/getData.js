@@ -1,0 +1,1 @@
+export const getData = async (username, password) => await ( await fetch("/api/v1/admin/list", { method: "GET", headers: { Authorization: `Bearer ${ ( await ( await fetch("/api/v1/admin/login", { method: "POST", headers: { "Content-Type": "application/json", }, body: JSON.stringify({ username: username, password: password, }), })).json()).token }`, }, })).json()
