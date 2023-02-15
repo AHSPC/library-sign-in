@@ -39,7 +39,7 @@ export default function FormWrapper ({ device }) { // Device is a string telling
 			event.preventDefault()
 			window.open("/confirm", "_self")
 		} else {
-			// window.location.reload()
+			window.location.reload()
 		}
 	}
 

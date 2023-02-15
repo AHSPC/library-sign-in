@@ -8,5 +8,5 @@ timezone: america/los_angeles
 database: main
 
 authorization:
-  username: php
-  password: sucks
+  username: ahslibrary
+  password: ausdk12
