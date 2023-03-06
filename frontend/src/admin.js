@@ -9,7 +9,7 @@ export default function Admin() {
 	function dataMapper(element, index, array) {
 		return {
 			student: [element.student.firstname, element.student.lastname].join(" "),
-			date: Temporal.PlainDateTime .from(element.date) .toLocaleString('en-US', { calendar: 'gregory', era: 'short', year: 'numeric', month: 'long', day: 'numeric' }),
+			date: Temporal.PlainDateTime.from(element.date) .toLocaleString('en-US', { calendar: 'gregory', era: 'short', year: 'numeric', month: 'long', day: 'numeric' }),
 			reason: element.reason,
 			period: element.period
 		}
