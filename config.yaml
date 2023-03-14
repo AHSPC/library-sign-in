@@ -4,7 +4,7 @@ server:
   secret: vxkZtiGx83a77x3aUZJ8hy3h8YITUBPfHPkqtsR4/U0rUWfUSGe77g==
 
 debug: true
-timezone: america/los_angeles
+timezone: america/portland
 database: main
 
 authorization:
