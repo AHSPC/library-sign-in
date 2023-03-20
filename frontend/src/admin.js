@@ -7,13 +7,14 @@ import { Temporal, Intl, toTemporalInstant } from '@js-temporal/polyfill';
 export default function Admin() {
 	let [ tableData, setTableData ] = useState({})
 	function dataMapper(element, index, array) {
-		return {
-			student: [element.student.firstname, element.student.lastname].join(" "),
-			date: Temporal.PlainDateTime.from(element.date) .toLocaleString('en-US', { calendar: 'gregory', era: 'short', year: 'numeric', month: 'long', day: 'numeric' }),
-			reason: element.reason,
-			period: element.period
-		}
-	}
+    let date = new Date(element.date).toDateString();
+    return {
+      student: [element.student.firstname, element.student.lastname].join(" "),
+      date: date,
+      reason: element.reason,
+      period: element.period,
+    };
+  }
 	useEffect(() => {
 		getData(prompt("Please Enter Username:"), prompt("Please Enter Password:")).then(
 			function (value) { setTableData(value.data.reverse().map(dataMapper)) },
